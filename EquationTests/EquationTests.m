@@ -127,4 +127,43 @@ Equation* e;
 // 実は虚数や0で割り算した場合など，計算結果が実数で表せない値になってしまったとき
 // nan という特殊な数値になります。
 // それでテストがパスしてしまったのですね。
+
+///////////////////////////// 課題２ ///////////////
+
+//実数解２つ
+// y=x^2+5x+6
+- (void)test5
+{
+    e = [[Equation alloc] initWithA:1 b:5 c:6];
+    
+    STAssertEqualsWithAccuracy(-2.0, [e real1], 0.00001, @"real1 error");
+    STAssertEqualsWithAccuracy(-3.0, [e real2], 0.00001, @"real2 error");
+    STAssertEqualsWithAccuracy(0.0, [e imaginary1], 0.00001, @"imaginary1 error");
+    STAssertEqualsWithAccuracy(0.0, [e imaginary2], 0.00001, @"imaginary2 error");
+}
+
+
+//重解
+//y=x^2-6x+9
+- (void)test6
+{
+    e = [[Equation alloc] initWithA:1 b:-6 c:9];
+    
+    STAssertEqualsWithAccuracy(3.0, [e real1], 0.00001, @"real1 error");
+    STAssertEqualsWithAccuracy(3.0, [e real2], 0.00001, @"real2 error");
+    STAssertEqualsWithAccuracy(0.0, [e imaginary1], 0.00001, @"imaginary1 error");
+    STAssertEqualsWithAccuracy(0.0, [e imaginary2], 0.00001, @"imaginary2 error");
+}
+
+//虚数解２つ
+//y=x^2+4x+5
+- (void)test7
+{
+    e = [[Equation alloc] initWithA:1 b:4 c:5];
+    
+    STAssertEqualsWithAccuracy(-2.0, [e real1], 0.00001, @"real1 error");
+    STAssertEqualsWithAccuracy(-2.0, [e real2], 0.00001, @"real2 error");
+    STAssertEqualsWithAccuracy(1.0, [e imaginary1], 0.00001, @"imaginary1 error");
+    STAssertEqualsWithAccuracy(-1.0, [e imaginary2], 0.00001, @"imaginary2 error");
+}
 @end
