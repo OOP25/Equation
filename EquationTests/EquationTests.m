@@ -166,4 +166,37 @@ Equation* e;
     STAssertEqualsWithAccuracy(1.0, [e imaginary1], 0.00001, @"imaginary1 error");
     STAssertEqualsWithAccuracy(-1.0, [e imaginary2], 0.00001, @"imaginary2 error");
 }
+
+//////////////////////////////  課題３  ////////////
+
+//１次方程式
+// y=5x+6
+-(void)test8
+{
+    e = [[Equation alloc] initWithA:0 b:5 c:6];
+    
+    STAssertEqualsWithAccuracy(-6/5.0, [e real1], 0.00001, @"real1 error");
+    STAssertEqualsWithAccuracy(-6/5.0, [e real2], 0.00001, @"real2 error");
+    STAssertEqualsWithAccuracy(0.0, [e imaginary1], 0.00001, @"imaginary1 error");
+    STAssertEqualsWithAccuracy(0.0, [e imaginary2], 0.00001, @"imaginary2 error");
+
+}
+
+//解なし
+// y=6
+-(void)test9
+{
+    e = [[Equation alloc] initWithA:0 b:0 c:6];
+    
+    STAssertEqualsWithAccuracy(0.0, [e real1], 0.00001, @"real1 error");
+    STAssertEqualsWithAccuracy(0.0, [e real2], 0.00001, @"real2 error");
+    STAssertEqualsWithAccuracy(0.0, [e imaginary1], 0.00001, @"imaginary1 error");
+    STAssertEqualsWithAccuracy(0.0, [e imaginary2], 0.00001, @"imaginary2 error");
+    
+}
+
+
+
+
+
 @end

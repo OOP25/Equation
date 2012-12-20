@@ -37,6 +37,12 @@
 
 - (double)real1
 {
+    if (a==0) {
+        if (b==0) {
+            return NAN;
+        }
+        return -c/b;
+    }
     if([self isReal]) {
         return (-b + sqrt([self discriminant]))/(2*a);
     }
@@ -45,6 +51,12 @@
 
 - (double)real2
 {
+    if (a==0) {
+        if (b==0) {
+            return NAN;
+        }
+        return -c/b;
+    }
     if([self isReal]) {
         return (-b - sqrt([self discriminant]))/(2*a);
     }
